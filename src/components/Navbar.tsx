@@ -1,4 +1,3 @@
-import LOGO from '../assets/images/logo.svg'
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'

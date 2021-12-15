@@ -47,7 +47,7 @@ function App() {
         <>
             <ThemeProvider theme={themeName === 'light' ? themeLight : themeDark}>
                 <GlobalStyles />
-                <Router>
+                <Router basename={`/${process.env.PUBLIC_URL}`}>
                     <Navbar themeName={themeName} themeToggler={themeToggler} />
                     <Routes>
                         <Route path="/" element={<Naslovna />} />
