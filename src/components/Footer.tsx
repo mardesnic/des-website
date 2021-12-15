@@ -18,7 +18,7 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <FooterContainer>
-                <Paragraph>&copy; 2021 Des</Paragraph>
+                <Paragraph>&copy; 2021 Des - Work in progress...</Paragraph>
             </FooterContainer>
         </FooterWrapper>
     )

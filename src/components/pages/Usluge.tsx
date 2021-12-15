@@ -29,7 +29,7 @@ gap:1em;
 }
 `
 
-const Card = styled.div`
+const Card = styled('div')<{animationName:string, delay: number}>`
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -38,6 +38,11 @@ border:1px solid ${props => props.theme.secondary2};
 background:${props => props.theme.primary};
 padding:1.5em;
 text-align:center;
+opacity:0;
+animation-name: ${props => props.animationName};
+animation-duration: 500ms;
+animation-fill-mode:forwards;
+animation-delay: ${props => props.delay}ms;
 `
 
 
@@ -48,42 +53,42 @@ const Usluge = () => {
             <Section>
                 <Container>
                     <CardGrid>
-                        <Card>
+                        <Card delay={100} animationName={'slideInFromLeft'}>
                             <BsBricks size='2em' />
                             <br />
                             <h3>Izrada Web Stranice</h3>
                             <br />
                             <p>Želite najbržu stranicu na tržištu?</p>
                         </Card>
-                        <Card>
+                        <Card delay={200} animationName={'slideInFromTop'}>
                             <MdOutlineMobileFriendly size='2em' />
                             <br />
                             <h3>Mobilne aplikacije</h3>
                             <br />
                             <p>Imate ideju za iOS i/ili Android aplikaciju?</p>
                         </Card>
-                        <Card>
+                        <Card delay={300} animationName={'slideInFromRight'}>
                             <IoPulseOutline size='2em' />
                             <br />
                             <h3>Revitalizacija</h3>
                             <br />
                             <p>Želite staru stranicu vratiti u život?</p>
                         </Card>
-                        <Card>
+                        <Card delay={400} animationName={'slideInFromLeft'}>
                             <MdOutlineChat size='2em' />
                             <br />
                             <h3>Savjetovanje</h3>
                             <br />
                             <p>Imate pitanja i želite stručno mišljenje?</p>
                         </Card>
-                        <Card>
+                        <Card delay={500} animationName={'slideInFromBottom'}>
                             <MdOutlineSearch size='2em' />
                             <br />
                             <h3>SEO i Testiranje</h3>
                             <br />
                             <p>Želite provjeriti koliko je lako pronaći vašu stranicu?</p>
                         </Card>
-                        <Card>
+                        <Card delay={600} animationName={'slideInFromRight'}>
                             <KontaktButton />
                         </Card>
                     </CardGrid>

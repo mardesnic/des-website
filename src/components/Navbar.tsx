@@ -15,6 +15,11 @@ const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 1100;
+    .brand{
+        color:${props => props.theme.secondary};
+        text-decoration:none;
+        font-size:26px;
+    }
 `
 const MenuIcon = styled.div`
     display: none;
@@ -139,7 +144,7 @@ const Navbar = ({ themeName, themeToggler }: Props) => {
         <>            
             <Nav>
                 <NavbarContainer>
-                    <Link to='/' onClick={() => handleMenuItemClick()}><img src={LOGO} alt='des logo' /></Link>
+                    <Link to='/' onClick={() => handleMenuItemClick()} className='brand'>&lt;Des&nbsp;/&gt;</Link>
                     <MenuIcon onClick={handleHamburgerClick}>
                         {openMenu ? <FaTimes /> : <FaBars />}
                     </MenuIcon>
