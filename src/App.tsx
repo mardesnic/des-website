@@ -7,7 +7,7 @@ import OMeni from './components/pages/OMeni'
 import { GlobalStyles } from "./components/GlobalStyles";
 
 import { useState, useEffect, useCallback } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import {  ThemeProvider } from 'styled-components'
 import { themeDark, themeLight } from './Theme'
 
