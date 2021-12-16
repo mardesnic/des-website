@@ -35,42 +35,47 @@ const FormStyled = styled.form`
 const ContactForm = () => {
     const [state, handleSubmit] = useForm("mknynbyz");
     if (state.succeeded) {
-        return <ParagraphStyled>Hvala Vam na interesu!<br />Javim se što prije <VscRocketStyled /></ParagraphStyled>
+        return (
+            <>
+                <ParagraphStyled>Hvala Vam na interesu!</ParagraphStyled>
+                <ParagraphStyled>Jurim žurim odgovoriti <VscRocketStyled /></ParagraphStyled>
+            </>
+        )
     }
-    return (
-        <FormStyled onSubmit={handleSubmit}>
-            <label htmlFor="email">
-                E-mail
-            </label>
-            <input
-                id="email"
-                type="email"
-                name="email"
-            />
-            <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-            />
-            <label htmlFor="message">
-                Poruka
-            </label>
-            <textarea
-                id="message"
-                name="message"
-                rows={4}
-            />
-            <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-            />
-            <br />
-            <Button type="submit" disabled={state.submitting}>
-                Pošalji
-            </Button>
-        </FormStyled>
-    );
+return (
+    <FormStyled onSubmit={handleSubmit}>
+        <label htmlFor="email">
+            E-mail
+        </label>
+        <input
+            id="email"
+            type="email"
+            name="email"
+        />
+        <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+        />
+        <label htmlFor="message">
+            Poruka
+        </label>
+        <textarea
+            id="message"
+            name="message"
+            rows={4}
+        />
+        <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+        />
+        <br />
+        <Button type="submit" disabled={state.submitting}>
+            Pošalji
+        </Button>
+    </FormStyled>
+);
 }
 
 export default ContactForm
