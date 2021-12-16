@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { Container } from './Container'
 import ParticlesWrapper from './ParticlesWrapper'
-import {Button} from './Button'
+import KontaktButton from './KontaktButton'
 import { VscRocket } from 'react-icons/vsc'
 import styled from 'styled-components'
 
@@ -36,19 +35,15 @@ const VscRocketStyled = styled(VscRocket)`
 `
 
 const HeroWrapper = () => {
-    const [showParticles, setshowParticles] = useState(false)
-    const toggleShowParticles = () => {
-        setshowParticles(!showParticles)
-    }
     return (
         <Hero>
             <Container>
                 <Cta>
-                    <h2>Najbrže stranice na tržištu <VscRocketStyled /></h2>  
-                    <Button onClick={()=>toggleShowParticles()}>Brrrr</Button>
+                    <h2>Najbrže stranice na tržištu <VscRocketStyled /></h2>                    
+                    <KontaktButton />
                 </Cta>
             </Container>
-            { showParticles && <ParticlesWrapper />}
+            <ParticlesWrapper />
         </Hero>
     )
 }
